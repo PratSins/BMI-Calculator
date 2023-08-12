@@ -11,8 +11,7 @@ app.get("/", function(req, res){
     res.sendFile(__dirname + "/index.html");
 })
 
-// app.post("/", function(req, res){
-app.post("/bmiCalc",function(req, res){
+app.post("/calc1", function(req, res){
     // console.log(req.body)
     // console.log(req.body.num1)
     var x = Number(req.body.num1)
@@ -22,15 +21,15 @@ app.post("/bmiCalc",function(req, res){
     res.send("Sum = "+z);
 })
 
-// app.get("/bmiCalc",function(req, res){
-//     res.sendFile(__dirname + "/bmi.html");
-// })
+app.get("/bmiCalc",function(req, res){
+    res.sendFile(__dirname + "/bmi.html");
+})
 
-// app.post("/bmiCalc",function(req, res){
-//     var w = Number(req.body.wt)
-//     var h = Number(req.body.ht)
-//     var z = w/(h*h)
+app.post("/calc2",function(req, res){
+    var w = Number(req.body.wt)
+    var h = Number(req.body.ht)
+    var z = w/(h*h)
 
-//     res.send("BMI = "+z);
-// })
+    res.send("BMI = "+z);
+})
 app.listen(3000,()=>console.log('HelloWorld App running on port 3000'))
